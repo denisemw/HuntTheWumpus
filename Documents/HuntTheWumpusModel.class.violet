@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_29" class="java.beans.XMLDecoder"> 
+ <object class="com.horstmann.violet.ClassDiagramGraph"> 
+  <void method="addNode"> 
+   <object id="ClassNode0" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-isVisited: boolean
+-hasLadder: boolean
+-hasBat: boolean
+-isPit: boolean
+-hasWumpus: boolean
+-hasBlood: boolean
+-isTunnel: boolean
+-isReverseTunnel: boolean
+-isTunnelVisitedR: boolean
+-isTunnelVisitedL: boolean
+-isOneAway: boolean
+-hasSlime: boolean
+-hasItem: boolean
+-location: Point
+-item: Item
+</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+Room(p: Point)
++setIsOneAway()
++isOneAway()
++setLadder()
++addItem(i: Item)
++getItem(): Item
++getItemLeeway(): Point
++removeItem(): Item
++hasLadder(): boolean
++setIsOneAway()
++setItem(addOrRemove: boolean)
++hasItem(): boolean
++createTunnel()
++createReverseTunnel()
++isReverseTunnel()
++setIsVisited(visit: boolean)
++setIsVisitedL(visit: boolean)
++setIsVisitedR(visit: boolean)
++isVisited(): boolean
++setIsPit(): boolean
++isPit(): boolean
++setHasBlood(blood: boolean): boolean
++hasSlime(): boolean
++setSlime(): boolean
++getHasBlood(): boolean
++setWumpus(wumpus: boolean): boolean
++hasWumpus(): boolean
++setBat(hasBat: boolean): boolean
++hasBat(): boolean
++isTunnel(): boolean
++getLocation(): Point</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>Room</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>-2.3418424571393643</double> 
+     <double>2.816233815926438</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode1" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>LEFT
+RIGHT
+UP
+DOWN
+STILL</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>&lt;&lt;enumeration&gt;&gt;
+ Direction</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>358.8993964035792</double> 
+     <double>651.5684728444246</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode2" class="com.horstmann.violet.ClassNode"> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+activateEffect(p: Player)
++toString():  String</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>Food</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>667.3175443068365</double> 
+     <double>761.7840877127949</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode3" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-p:  Player
+-map:  WumpusMap
+-gameOver:  boolean
+-isClient:  boolean
+-isServer:  boolean
+-isPvP:  boolean
+-wumpusDead:  boolean
+-isConnected:  boolean
+-badPort:  boolean
+-itemCount: int
+-port: int
+-rooms: Room[][][]
+-players:  LinkedList&lt;Player&gt;
+-server: Server
+-client:  Client
+-IP:  String</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+HuntTheWumpus(name: String, shots: int, level: int)
++HuntTheWumpus(name: String, shots: int, port: int, IP: String)
++HuntTheWumpus(name: String, shots: int, level: int, port: int, PvP: boolean)
++HuntTheWumpus(savedPlayer: Player, savedMap:  WumpusMap)
++HuntTheWumpus(savedPlayers: LinkedList&lt;Player&gt;, savedMap: WumpusMap, port: int, PvP: boolean)
++getPlayerList():  List&lt;Player&gt;
+-regenerateItem()
++serverUnavailableProcessing(s:  String)
++setBadPort(b: boolean)
++isBadPort(): boolean
++getRooms():  Room[][][]
++getCurrLevel(): Room[][]
++getMap(): WumpusMap
++getPlayer(): Player
++isOver(): boolean
++isPvP(): boolean
++shoot(d: Direction)
+-checkMoveIntoItem()
+-checkMoveIntoWumpus()
+-checkMoveIntoBat()
+-checkMoveIntoPit()
++climbLadder()
++move(p: Player, location: Point, leeway: Point, level: int)
++processChat(text: String)
++saveGame()
+-removeNameSpaces(): String
+-dateTime(): String
++update(arg0:  Observable, obj: Object)
++getIsConnected(): boolean</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>HuntTheWumpus</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>909.2152026093174</double> 
+     <double>1.2704853800326532</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode4" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-location: Point
+-leeway: Point
+-isVisible: boolean
+-level: int</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+activateEffect(p: Player)
++setLocation(p: Point)
++setLevel(level: int)
++getLevel(): int
++setIsVisible()
++isVisible():  boolean
++setLeeway(p: Point)
++getLeeway(): Point
++getLocation(): Point
++toString(): String</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>&lt;&lt;abstract&gt;&gt;
+Item</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>677.3022330434038</double> 
+     <double>409.2385670452363</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode5" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-isDead: boolean
+-deathByWumpus: boolean
+-deathByPit: boolean
+-deathByPlayer: boolean
+-killedWumpus: boolean
+-playerKilledBy: Player
+-location: Point
+-prevLocation: Point
+-leeway: Point
+-numShots: int
+-name: String
+-energy: Integer
+-currLevel: Integer
+-teleportBlock: boolean
+-inventory: LinkedList&lt;Item&gt;
+-isVisible:  boolean
+-hasWon:  boolean
+-lastMove: Direction
+-roomNav:  RoomNavigator
+-id: long</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+Player(name: String, shots: int)
++setKilledWumpus()
++getKilledWumpus(): boolean
++ setCurrLevel(level: int)
++getCurrLevel(): int
++setDeathByWhichPlayer(p: Player)
++killedByWhichPlayer(): Player
++setDeathByPlayer()
++deathByPlayer(): boolean
++setDeathByPit()
++deathByPit(): boolean
++setDeathByWumpus()
++deathByWumpus(): boolean
++setIsVisible(isVisible: boolean)
++getID(): long
++setHasWon()
++hasWon(): boolean
++getEnergy(): int
++isVisible(): boolean
++addItem(i: Item)
++getInventory(): LinkedList&lt;Item&gt;
++setTeleportBlock(isSet: boolean)
++getTeleportBlock(): boolean
++changeEnergy(amount: int)
++getName(): String
++getNumShots(): int
++useShot()
++isDead(): boolean
++setLocation(p: Point)
++getLocation(): Point
++getPrevLocation(): Point
++setPrevLocation(p: Point)
++kill()
++getLeeway(): Point
++setLeeway(p: Point)
++addShot()
++canMoveLeft(rooms: Room[][][], curr: Point, prev: Point)
++canMoveRight(rooms: Room[][][], curr: Point, prev: Point)
++canMoveUp(rooms: Room[][][], curr: Point, prev: Point)
++canMoveDown(rooms: Room[][][], curr: Point, prev: Point)
++setLastMove(dir: Direction)
++getLastMove(): Direction
++moveLeft(map: WumpusMap, game: HuntTheWumpus): boolean
++moveRight(map: WumpusMap, game: HuntTheWumpus): boolean
++moveUp(map: WumpusMap, game: HuntTheWumpus): boolean
++moveDown(map: WumpusMap, game: HuntTheWumpus): boolean
++equals(p: Player): boolean</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>Player</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>1596.9898887806612</double> 
+     <double>1.7857103978843725</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode6" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-xCoor: int
+-yCoor: int</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+Point(y: int, x: int)
++getXCoor(): int
++getYCoor(): int</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>Point</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>422.8227320417203</double> 
+     <double>864.2186826574775</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode7" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-player: Player
+-location: Point
+-miniLeeway: Point</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+RoomNavigator(p: Player)
++getPlayer(): Player
++setLocation(p: Point)
++getLocation(): Point
++setMiniLeeway(miniL: Point)
++getMiniLeeway(): Point</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>RoomNavigator</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>1357.9009306430896</double> 
+     <double>819.9097769850154</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode8" class="com.horstmann.violet.ClassNode"> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+activateEffect(p: Player)
++toString():  String</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>Silencer</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>824.137649722795</double> 
+     <double>756.6205065131217</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode9" class="com.horstmann.violet.ClassNode"> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+activateEffect(p: Player)
++toString():  String</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>TeleportBlocker</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>515.5095425101728</double> 
+     <double>763.1179441600538</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode10" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-wumpusLocation: Point
+-isMultiplayer: boolean
+-pvp: boolean
+-wumpusLevel: int
+-probablility: double
+-levels: Room[][][]
+-currLevel: Room[][]
+-left: int
+-right: int
+-up: int
+-down: int</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+WumpusMap(level: int, multiplayer: boolean, pvp: boolean)
+-generateWumpusFreeLevel(): Room[][]
++getPvP(): boolean
+-isSolveableTunnels(rooms: Room[][]): boolean
+-isSolveableWumpus(): boolean
++setWumpusAndBlood(action: boolean, x: int, y: int, z: int)
++setPits(x: int, y: int, z: int)
++setBats(action: boolean, x: int, y: int, z: int): Point
++toString(): String
++getMap(): Room[][][]
++getRoom(x: int, y: int, level: int): Room
+-moveArrow(curr: Point, prev: Point, d: Direction, currLevel: int)
++shoot(location: Point, prev: Point, d: Direction, currLevel: int)
++setIsVisited(x: int, y: int, bool: boolean, level: int)
++getWumpus(): int
++setCurrLevel(level: int)
++getCurrLevel(): Room[][]</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>WumpusMap</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>313.06169503882404</double> 
+     <double>2.241578981379604</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode11" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-serverSocket: ServerSocket
+-removal: LinkedBlockingQueue&lt;ClientManager&gt;
+-clientManagers: LinkedList&lt;ClientManager&gt;
+-clientCount: int
+-map: WumpusMap
+-playerList: ArrayList&lt;Player&gt;
+-players: HashMap&lt;Object, Player&gt;</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+Server(port: int, htw: HuntTheWumpus)
++run()
++sendObject(obj: Object)
++removePlayer(p: Player)</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>Server</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>1039.367018512378</double> 
+     <double>948.9872777721713</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode12" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-socket: Socket
+-inStream: ObjectInputStream
+-outStream: ObjectOutputStream
+-count: int
+-htw: HuntTheWumpus
+-connected: boolean</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+Client(ip: String, port: Integer, htw: HuntTheWumpus)
++isConnected(): boolean
++receiveObject(): Object
++writeObject(obj: Object)</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>Client</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>713.5242690016323</double> 
+     <double>953.7441062321824</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="BLACK_DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode10"/> 
+   <object idref="ClassNode0"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode9"/> 
+   <object idref="ClassNode4"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode2"/> 
+   <object idref="ClassNode4"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode8"/> 
+   <object idref="ClassNode4"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode3"/> 
+   <object idref="ClassNode10"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode3"/> 
+   <object idref="ClassNode5"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode0"/> 
+   <object idref="ClassNode4"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="V"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode1"/> 
+   <object idref="ClassNode10"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="V"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode1"/> 
+   <object idref="ClassNode5"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="V"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode6"/> 
+   <object idref="ClassNode0"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="V"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode6"/> 
+   <object idref="ClassNode4"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="V"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode6"/> 
+   <object idref="ClassNode5"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="V"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode7"/> 
+   <object idref="ClassNode5"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode3"/> 
+   <object idref="ClassNode11"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode3"/> 
+   <object idref="ClassNode12"/> 
+  </void> 
+ </object> 
+</java> 

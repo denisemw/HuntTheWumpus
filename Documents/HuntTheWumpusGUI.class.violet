@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_29" class="java.beans.XMLDecoder"> 
+ <object class="com.horstmann.violet.ClassDiagramGraph"> 
+  <void method="addNode"> 
+   <object id="ClassNode0" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>#log : JTextArea
+-currentPanel : MasterViewPanel
+-panels : Stack&lt;MasterViewPanel&gt;
+-body : JPanel
+#multiplayer : Boolean
+#pvp : Boolean</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+main(args : String[])
++MasterView() 
+-setUpMenuBar()
+-setDefaultPanel()
++changeView(v : Views, g : GameType, o : Object)
++changeSelection(v : Views, o : Object)</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>MasterView</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>1119.9916340674517</double> 
+     <double>22.543426440594345</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode1" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-inputBox : JTextField
+-logScroll : JScrollPane
+-sendButton : JButton
+-htw : HuntTheWumpus</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+ChatPanel(htw : HuntTheWumpus)</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>ChatPanel</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>1.8669855531228734</double> 
+     <double>573.5202208986077</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode2" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-scrollList : JScrollPane
+-gameList : JList
+-gLModel : ListSelectionModel
+-name : String
+-savedGames : File
+-listOfGames : File[]
+-deleted : boolean = false
+-timeSpace : int
+-dateSpace : int
+-nameSpace : int
+-gameSpace : int</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+ContinueGameSelection(m : MasterView)
+-setUpLayout()
+-setUpButtons()
+-getListFiles()
++loadGame(): HuntTheWumpus</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>ContinueGameSelection</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>974.3416473793728</double> 
+     <double>440.35235870191883</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode3" class="com.horstmann.violet.ClassNode"> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>CLASSIC
+WESTERN
+SPACE</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>&lt;&lt;enum&gt;&gt;
+GameType</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>8.467502790807373</double> 
+     <double>456.8401012546098</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode4" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-game : HuntTheWumpus
+-playerList : List&lt;Player&gt;
+-topPanel : JPanel
+-bottomPanel : JPanel
+-multiplayerPanel : JPanel
+-movementListener : KeyListener
+-shootListener : KeyListener
+-player : JLabel[]
+-playerEnergy : JLabel[]
+-index : int = 0
+-wonIndex : int = 0
+-boolean isConnected</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+GameView(m : MasterView, g : GameType, htw : HuntTheWumpus)
++getGame() : HuntTheWumpus
++setNotConnected()
+-setUpTopPanel()
+-setUpBottomPanel()
+-setUpBottomPanelMultiPlayer()
++paintComponent(g : Graphics)
+-setupMultiplayerPanel()
+-updatePlayerInfo()
++paintRoom()
++unableToConnectServer()
++update(arg0 : Observable, obj : Object)</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>GameView</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>30.54989174924347</double> 
+     <double>6.693888186080187</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode5" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-JTextField nameField
+-portField : JTextField
+-beginner : JRadioButton
+-intermediate : JRadioButton
+-advanced : JRadioButton
+-classic : JRadioButton
+-western : JRadioButton
+-space : JRadioButton
+-coop : JRadioButton
+-pvp : JRadioButton
+-nameLabel : JLabel
+-themeLabel : JLabel
+-levelLabel : JLabel
+portLabel : JLabel
+multGameType : JLabel
+-eastPanel : JPanel
+-westPanel : JPanel
+-namePanel : JPanel
+-portPanel : JPanel
+-startGame : JButton
+-levelSelected : int 
+-numShots : int
+-selectedGameType : GameType
+-multGameTypeChoice : boolean</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+HostGameSelection(m : MasterView)
+-setUpLayout()
+-setUpTextField()
+-addLabels()
+-addThemeButtons()
+-addLevelButtons()
+-addMultGameTypeButtons()
+-setUpPortField()
+-addStartButton()
+-addReturnButton()
+-parsePort(str : String) : int
+-hostHTW(playerName : String, i : int, level : int, port : int, mp : boolean) : HuntTheWumpus
+</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>HostGameSelection</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>1218.6844249959447</double> 
+     <double>437.43920237500106</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode6" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-energy : JProgressBar
+-food : JButton
+-silencer : JButton
+-blocker : JButton
+-foodNum : JLabel
+-silencerNum : JLabel
+-blockerNum : JLabel
+-game : HuntTheWumpus
+-themeGen : ThemeGenerator
+-gameView : GameView</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+InventoryPanel(g : HuntTheWumpus, gv : GameView, gt : GameType)
++paintComponent(g : Graphics)
+-updateInventoryCount()
+-updateButtons(foodCount : int, silencerCount : int, blockerCount : int)
++updateEnergy()
+</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>InventoryPanel</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>459.9468877709428</double> 
+     <double>968.2063775315846</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode7" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-nameField : JTextField 
+-portField : JTextField 
+-ipField : JTextField 
+-classic : JRadioButton 
+-western : JRadioButton 
+-space : JRadioButton 
+-coop : JRadioButton 
+-pvp : JRadioButton 
+-nameLabel : JLabel
+-themeLabel : JLabel
+-portLabel : JLabel
+-ipLabel : JLabel
+-multGameType : JLabel
+-eastPanel : JPanel
+-westPanel : JPanel
+-namePanel : JPanel
+-portPanel : JPanel
+-ipPanel : JPanel
+-startGame : JButton
+-selectedGameType : GameType
+-multGameTypeChoice : Boolean</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+JoinGameSelection(m : MasterView)
+-setUpLayout()
+-setUpTextField()
+-addLabels()
+-addThemeButtons()
+-setUpPortField()
+-setUpIPField()
+-addStartButton()
+-addReturnButton()
+-parsePort(str : String) : int
+-validIP() : String</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>JoinGameSelection</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>1741.4807583551383</double> 
+     <double>441.81792830507425</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode8" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>#mv : MasterView</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+MasterViewPanel(m : MasterView)</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>MasterViewPanel</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>812.7260558643566</double> 
+     <double>228.2257769999383</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode9" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-wumpusMap : WumpusMap
+-roomType : Room
+-player : Player
+-game : HuntTheWumpus
+-isLarge : boolean
+-gameType : GameType
+-themeGen : ThemeGenerator
+-mapLevel : JLabel
+-rooms : Room[][]
+-currLevel : int</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+MiniMap(m : MasterView, htw : HuntTheWumpus, g : GameType, b : boolean)
+-addMouseListener()
++paintComponent(g : Graphics)
+-setButtons()</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>MiniMap</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>13.787383146809589</double> 
+     <double>971.4233288983609</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode10" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-nameField : JTextField
+-beginner : JRadioButton
+-intermediate : JRadioButton
+-advanced : JRadioButton
+-classic : JRadioButton
+-western : JRadioButton
+-space : JRadioButton
+-nameLabel : JLabel
+-themeLabel : JLabel
+-levelLabel : JLabel
+-eastPanel : JPanel
+-westPanel : JPanel
+-namePanel : JPanel
+-startGame : JButton
+-levelSelected : int
+-numShots : int
+-selectedGameType : GameType
+-playerName : String</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+NewGameSelection(m : MasterView)
+-setUpLayout()
+-setUpTextField()
+-addLabels()
+-addThemeButtons()
+-addLevelButtons()
+-addStartButton()
+-addReturnButton()</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>NewGameSelection</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>742.0345458379971</double> 
+     <double>435.0065776912404</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode11" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-themeGen : ThemeGenerator
+-game : HuntTheWumpus
+-playerMoved : boolean
+-moveDirection : Direction
+-playerPanel : PlayerPanel 
+-player : Player
+-rooms : Room[][][]</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+RoomPanel(g : HuntTheWumpus, gt : GameType, moved : boolean, m : MasterView)
++setMoved(moved : boolean, dir : Direction, p : Player)
++paintComponent(g : Graphics)</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>RoomPanel</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>-0.3398890944975932</double> 
+     <double>716.5401146112002</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode12" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>+background : Image
++notVisited : Image
++hasBlood : Image
++hasSlime : Image
++normalTunnel : Image
++rightTunnel : Image
++leftTunnel : Image
++reverseRightTunnel : Image
++hasReverseTunnel : Image
++reverseLeftTunnel : Image
++pit : Image
++slimeAndBlood : Image
++wumpus : Image
++bat : Image
++regularRoom : Image
++mapItem : Image
++playerImage[] : Image
++inventoryPicture : Image
++food: Image
++silencer: Image
++blocker: Image
++roomTopLeftTunnel : Image
++roomBottomRightTunnel : Image
++roomBothReverseTunnels : Image
++roomBottomLeftTunnel : Image
++roomTopRightTunnel : Image
++roomBothTunnels : Image
++roomRegular : Image
++ladder : Image
++bloodRoom : Image
++slimeRoom : Image
++slimeAndBloodRoom : Image
++batRoom : Image
++ladderRoom : Image
++inventoryFont : Font
++inventoryFontColor : Color
++multiplayerPanelColor : Color</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+ThemeGenerator(g : GameType)
+-setPlayerImages()</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>ThemeGenerator</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>500.82160706160073</double> 
+     <double>300.3879895258966</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode13" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-newGame : JButton
+-hostGame : JButton
+-joinGame : JButton
+-continueGame : JButton
+-exit : JButton
+-buttonPanel : JPanel
+-imageLabel : JLabel</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+TitleView(m : MasterView)
++paintComponent(g : Graphics)
+-setLayout()</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>TitleView</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>526.0362190245069</double> 
+     <double>-4.898761223859026</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode14" class="com.horstmann.violet.ClassNode"> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>PREVIOUS
+GAME
+MINIMAP
+NEWGAME
+HOSTGAME
+JOINGAME
+CONTINUEGAME
+TITLE
+FALLINGPLAYER
+HUNGRYWUMPUS
+VICTORYDANCE
+BEGINNING_CUTSCENE
+DEADWUMPUS_CLASSICAL
+DEADWUMPUS_WESTERN
+DEADWUMPUS_SPACE
+PLAYERGOTKILLED
+STARVEDPLAYER
+ARROWSHOOTING
+LASERBEAM
+BULLETSHOOTING
+BATTAKINGPLAYER</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>&lt;&lt;enum&gt;&gt;
+Views</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>1519.3490847112641</double> 
+     <double>-1.864422254269698</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode15" class="com.horstmann.violet.ClassNode"> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>javax.swing.JFrame</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>909.4947015760526</double> 
+     <double>13.182071694925718</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode16" class="com.horstmann.violet.ClassNode"> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>javax.swing.JPanel</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>777.2291233729577</double> 
+     <double>12.546215084777142</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode17" class="com.horstmann.violet.ClassNode"> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>BEG_CLASSIC
+BEG_WESTERN
+BEG_SPACE
++playCutscene(cs : Cutscene, jp : CutsceneView)</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>&lt;&lt;enum&gt;&gt;
+Cutscene</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>1732.0</double> 
+     <double>28.0</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode18" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-animeLabel : JLabel
+-event : String
+-filePath : String
+-image : ImageIcon
+-gameType : GameType
+-game : HuntTheWumpus</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+PlayAnimation(m : MasterView, eventType : String, gt : GameType, htw : HuntTheWumpus)
+-setupLayout()
+-playAnime()
+-changeView()</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>PlayAnimation</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>1728.0</double> 
+     <double>176.0</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="addNode"> 
+   <object id="ClassNode19" class="com.horstmann.violet.ClassNode"> 
+    <void property="attributes"> 
+     <void property="text"> 
+      <string>-charToDraw : char[]
+-i : ImageIcon
+-gt : GameType
+-htw : HuntTheWumpus</string> 
+     </void> 
+    </void> 
+    <void property="methods"> 
+     <void property="text"> 
+      <string>+CutsceneView(m : MasterView, gt : GameType, htw : HuntTheWumpus)
+-setUpLayout()
+-setUpAnimation()
+-beginGame()
++paintComponent(g : Graphics)
++draw(story : String, filePath : String)</string> 
+     </void> 
+    </void> 
+    <void property="name"> 
+     <void property="text"> 
+      <string>CutsceneView</string> 
+     </void> 
+    </void> 
+   </object> 
+   <object class="java.awt.geom.Point2D$Double"> 
+    <void method="setLocation"> 
+     <double>1984.0</double> 
+     <double>440.0</double> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="V"/> 
+    </void> 
+    <void property="lineStyle"> 
+     <object class="com.horstmann.violet.LineStyle" field="DOTTED"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode0"/> 
+   <object idref="ClassNode14"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="BLACK_DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode0"/> 
+   <object idref="ClassNode8"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode7"/> 
+   <object idref="ClassNode8"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode5"/> 
+   <object idref="ClassNode8"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode2"/> 
+   <object idref="ClassNode8"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode4"/> 
+   <object idref="ClassNode8"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode10"/> 
+   <object idref="ClassNode8"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode13"/> 
+   <object idref="ClassNode8"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode4"/> 
+   <object idref="ClassNode6"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode4"/> 
+   <object idref="ClassNode11"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode4"/> 
+   <object idref="ClassNode1"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode4"/> 
+   <object idref="ClassNode9"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode4"/> 
+   <object idref="ClassNode3"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/> 
+    </void> 
+    <void property="startArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode4"/> 
+   <object idref="ClassNode12"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode0"/> 
+   <object idref="ClassNode15"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode8"/> 
+   <object idref="ClassNode16"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.NoteEdge"/> 
+   <object idref="ClassNode14"/> 
+   <object idref="ClassNode14"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode18"/> 
+   <object idref="ClassNode8"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="V"/> 
+    </void> 
+    <void property="lineStyle"> 
+     <object class="com.horstmann.violet.LineStyle" field="DOTTED"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode14"/> 
+   <object idref="ClassNode17"/> 
+  </void> 
+  <void method="connect"> 
+   <object class="com.horstmann.violet.ClassRelationshipEdge"> 
+    <void property="bentStyle"> 
+     <object class="com.horstmann.violet.BentStyle" field="VHV"/> 
+    </void> 
+    <void property="endArrowHead"> 
+     <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/> 
+    </void> 
+   </object> 
+   <object idref="ClassNode19"/> 
+   <object idref="ClassNode8"/> 
+  </void> 
+ </object> 
+</java> 
